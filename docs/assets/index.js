@@ -9287,7 +9287,7 @@ const Navbar = () => {
             }
           ),
           isAppsDropdownOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "dropdown-menu", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/ultralist", className: "dropdown-link", children: "UltraList" }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "dropdown-link", children: "ListKeeper" }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "dropdown-link", children: "Pixel Farm" }) })
           ] })
         ] })
@@ -9321,7 +9321,7 @@ const Navbar = () => {
           }
         ),
         isAppsDropdownOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "dropdown-menu", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/ultralist", className: "dropdown-link", onClick: toggleMenu, children: "UltraList" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "dropdown-link", onClick: toggleMenu, children: "ListKeeper" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "dropdown-link", onClick: toggleMenu, children: "Pixel Farm" }) })
         ] })
       ] })
@@ -9335,7 +9335,7 @@ const Home = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "subtitle", children: "Software Developer & Creator" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Welcome to my professional portfolio website. Here you'll find information about my work, projects, and career journey." }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hero-buttons", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/ultralist", className: "btn", children: "View UltraList Project" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "btn", children: "View ListKeeper Project" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "btn btn-outline ml-2", children: "View Pixel Farm Project" })
       ] })
     ] }),
@@ -9371,8 +9371,8 @@ const Home = () => {
   ] });
 };
 const projects = {
-  ultralist: {
-    title: "UltraList",
+  listkeeper: {
+    title: "ListKeeper",
     description: "A comprehensive task management application designed to help users organize their daily activities and increase productivity.",
     features: [
       "Task Management",
@@ -9387,8 +9387,8 @@ const projects = {
       "Authentication": "JWT-based system"
     },
     screenshots: [
-      "/src/assets/ultralist-dashboard.png",
-      "/src/assets/ultralist-task-list.png"
+      "/src/assets/listkeeper-dashboard.png",
+      "/src/assets/listkeeper-task-list.png"
     ]
   },
   pixelfarm: {
@@ -9412,8 +9412,8 @@ const projects = {
     ]
   }
 };
-const UltraList = () => {
-  const project = projects.ultralist;
+const ListKeeper = () => {
+  const project = projects.listkeeper;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-page", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-header card", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: project.title }),
@@ -9448,6 +9448,14 @@ const UltraList = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: screenshot, alt: `${project.title} Screenshot ${index + 1}` }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: getScreenshotDescription$1(index) })
       ] }, index)) })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-legal card", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Legal & Privacy" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+        "For privacy information, see the ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "/privacy-policy-listkeeper-en.html", target: "_blank", rel: "noopener noreferrer", children: "ListKeeper Privacy Policy" }),
+        "."
+      ] })
     ] })
   ] });
 };
@@ -9543,7 +9551,7 @@ function App() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Navbar, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("main", { className: "main-content", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Routes, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/", element: /* @__PURE__ */ jsxRuntimeExports.jsx(Home, {}) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/ultralist", element: /* @__PURE__ */ jsxRuntimeExports.jsx(UltraList, {}) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/listkeeper", element: /* @__PURE__ */ jsxRuntimeExports.jsx(ListKeeper, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/pixelfarm", element: /* @__PURE__ */ jsxRuntimeExports.jsx(PixelFarm, {}) })
     ] }) })
   ] }) });

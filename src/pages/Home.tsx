@@ -12,7 +12,7 @@ const Home = () => {
           projects, and career journey.
         </p>
         <div className="hero-buttons">
-          <Link to="/ultralist" className="btn">View UltraList Project</Link>
+          <Link to="/listkeeper" className="btn">View ListKeeper Project</Link>
           <Link to="/pixelfarm" className="btn btn-outline ml-2">View Pixel Farm Project</Link>
         </div>
       </section>

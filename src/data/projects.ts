@@ -9,9 +9,9 @@ export interface Project {
 }
 
 export const projects = {
-  ultralist: {
-    id: 'ultralist',
-    title: 'UltraList',
+  listkeeper: {
+    id: 'listkeeper',
+    title: 'ListKeeper',
     description: 'A comprehensive task management application designed to help users organize their daily activities and increase productivity.',
     features: [
       'Task Management',
@@ -26,8 +26,8 @@ export const projects = {
       'Authentication': 'JWT-based system'
     },
     screenshots: [
-      '/src/assets/ultralist-dashboard.png',
-      '/src/assets/ultralist-task-list.png'
+  '/src/assets/listkeeper-dashboard.png',
+  '/src/assets/listkeeper-task-list.png'
     ]
   } as Project,
   

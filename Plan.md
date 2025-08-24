@@ -7,7 +7,7 @@ Create a stylish, professional, dark-themed static website for Alec Chamberland,
 - Single entrypoint React app (no routing via multiple HTML files)
 - Dark theme with midnight blue as primary color
 - Navigation menu with "Home" and "Apps" (dropdown on hover)
-- Three pages: Home, UltraList, Pixel Farm
+ - Three pages: Home, ListKeeper, Pixel Farm
 - Responsive design
 - Optimized for GitHub Pages hosting
 - Clean, modern, professional aesthetic
@@ -44,7 +44,7 @@ Create a stylish, professional, dark-themed static website for Alec Chamberland,
   - Career highlights
   - Aspirations and future goals
   - Professional image
-- [ ] Create `UltraList.tsx` page:
+- [ ] Create `ListKeeper.tsx` page:
   - Project overview
   - Features and benefits
   - Screenshots or demo
@@ -62,12 +62,12 @@ Create a stylish, professional, dark-themed static website for Alec Chamberland,
 ### 8. Implement Routing
 - [ ] Install `react-router-dom`
 - [ ] Set up `BrowserRouter` in `App.tsx`
-- [ ] Define routes for Home, UltraList, PixelFarm
+- [ ] Define routes for Home, ListKeeper, PixelFarm
 - [ ] Ensure navigation links work properly
 
 ### 9. Add Project Data & Content
 - [ ] Create `data/projects.ts` with project metadata
-- [ ] Populate with content for UltraList and PixelFarm
+- [ ] Populate with content for ListKeeper and PixelFarm
 - [ ] Use data in respective pages
 
 

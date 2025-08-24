@@ -40,7 +40,7 @@ const Navbar = () => {
             </button>
             {isAppsDropdownOpen && (
               <ul className="dropdown-menu">
-                <li><Link to="/ultralist" className="dropdown-link">UltraList</Link></li>
+                <li><Link to="/listkeeper" className="dropdown-link">ListKeeper</Link></li>
                 <li><Link to="/pixelfarm" className="dropdown-link">Pixel Farm</Link></li>
               </ul>
             )}
@@ -77,7 +77,7 @@ const Navbar = () => {
             </button>
             {isAppsDropdownOpen && (
               <ul className="dropdown-menu">
-                <li><Link to="/ultralist" className="dropdown-link" onClick={toggleMenu}>UltraList</Link></li>
+                <li><Link to="/listkeeper" className="dropdown-link" onClick={toggleMenu}>ListKeeper</Link></li>
                 <li><Link to="/pixelfarm" className="dropdown-link" onClick={toggleMenu}>Pixel Farm</Link></li>
               </ul>
             )}
