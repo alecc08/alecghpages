@@ -7280,21 +7280,21 @@ function matchRoutesImpl(routes, locationArg, basename, allowPartial) {
 }
 function flattenRoutes(routes, branches = [], parentsMeta = [], parentPath = "") {
   let flattenRoute = (route, index, relativePath) => {
-    let meta = {
+    let meta2 = {
       relativePath: relativePath === void 0 ? route.path || "" : relativePath,
       caseSensitive: route.caseSensitive === true,
       childrenIndex: index,
       route
     };
-    if (meta.relativePath.startsWith("/")) {
+    if (meta2.relativePath.startsWith("/")) {
       invariant(
-        meta.relativePath.startsWith(parentPath),
-        `Absolute route path "${meta.relativePath}" nested under path "${parentPath}" is not valid. An absolute child route path must start with the combined path of all its parent routes.`
+        meta2.relativePath.startsWith(parentPath),
+        `Absolute route path "${meta2.relativePath}" nested under path "${parentPath}" is not valid. An absolute child route path must start with the combined path of all its parent routes.`
       );
-      meta.relativePath = meta.relativePath.slice(parentPath.length);
+      meta2.relativePath = meta2.relativePath.slice(parentPath.length);
     }
-    let path = joinPaths([parentPath, meta.relativePath]);
-    let routesMeta = parentsMeta.concat(meta);
+    let path = joinPaths([parentPath, meta2.relativePath]);
+    let routesMeta = parentsMeta.concat(meta2);
     if (route.children && route.children.length > 0) {
       invariant(
         // Our types know better, but runtime JS may not!
@@ -7350,8 +7350,8 @@ function explodeOptionalSegments(path) {
 function rankRouteBranches(branches) {
   branches.sort(
     (a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(
-      a.routesMeta.map((meta) => meta.childrenIndex),
-      b.routesMeta.map((meta) => meta.childrenIndex)
+      a.routesMeta.map((meta2) => meta2.childrenIndex),
+      b.routesMeta.map((meta2) => meta2.childrenIndex)
     )
   );
 }
@@ -7396,19 +7396,19 @@ function matchRouteBranch(branch, pathname, allowPartial = false) {
   let matchedPathname = "/";
   let matches = [];
   for (let i = 0; i < routesMeta.length; ++i) {
-    let meta = routesMeta[i];
+    let meta2 = routesMeta[i];
     let end = i === routesMeta.length - 1;
     let remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/";
     let match = matchPath(
-      { path: meta.relativePath, caseSensitive: meta.caseSensitive, end },
+      { path: meta2.relativePath, caseSensitive: meta2.caseSensitive, end },
       remainingPathname
     );
-    let route = meta.route;
+    let route = meta2.route;
     if (!match && end && allowPartial && !routesMeta[routesMeta.length - 1].route.index) {
       match = matchPath(
         {
-          path: meta.relativePath,
-          caseSensitive: meta.caseSensitive,
+          path: meta2.relativePath,
+          caseSensitive: meta2.caseSensitive,
           end: false
         },
         remainingPathname
@@ -9103,6 +9103,72 @@ function useViewTransitionState(to, { relative } = {}) {
   let nextPath = stripBasename(vtContext.nextLocation.pathname, basename) || vtContext.nextLocation.pathname;
   return matchPath(path.pathname, nextPath) != null || matchPath(path.pathname, currentPath) != null;
 }
+const nav$1 = { "home": "Home", "listkeeper": "ListKeeper", "pixelfarm": "Pixel Farm", "github": "GitHub" };
+const home$1 = { "passionStatement": "Driven by a passion for technology and the art of coding, I create applications that blend functionality with thoughtful design.", "featuredProjects": "Featured Projects", "listkeeperDescription": "A beautifully simple list app that focuses on what matters", "listkeeperTag": "Flutter • Android", "pixelfarmDescription": "Roguelike farming adventure with charming pixel art", "pixelfarmTag": "Godot • In Development" };
+const listkeeper$1 = { "subtitle": "Simple lists. Done right.", "about": "About", "description": "In a world of bloated productivity apps that try to do everything, ListKeeper takes a different approach. It's a beautifully simple list management app that does one thing exceptionally well: helping you organize your thoughts and tasks without the noise. No complex features you'll never use, no overwhelming interfaces—just elegant, focused list-making that stays out of your way.", "highlights": "Highlights", "highlightsList": ["Clean, intuitive interface", "Fast and lightweight", "Focus on simplicity"], "privacyPolicy": "Privacy Policy", "backToHome": "Back to Home" };
+const pixelfarm$1 = { "subtitle": "Coming soon...", "about": "About", "description": "An upcoming roguelike farming adventure that blends charming pixel art with deep, engaging gameplay. While we're keeping the details under wraps for now, we can promise months of captivating gameplay in a completely ad-free experience. Built with passion and designed for those who appreciate both strategy and style.", "whatToExpect": "What to Expect", "highlightsList": ["Handcrafted pixel art", "Roguelike farming mechanics", "Ad-free experience", "Extensive replayability"], "backToHome": "Back to Home" };
+const footer$1 = { "builtWith": "Built with React" };
+const meta$1 = { "platform": "Platform", "engine": "Engine", "android": "Android", "androidIosPlanned": "Android (iOS planned)", "flutter": "Flutter", "godot": "Godot" };
+const enTranslations = {
+  nav: nav$1,
+  home: home$1,
+  listkeeper: listkeeper$1,
+  pixelfarm: pixelfarm$1,
+  footer: footer$1,
+  meta: meta$1
+};
+const nav = { "home": "Accueil", "listkeeper": "ListKeeper", "pixelfarm": "Pixel Farm", "github": "GitHub" };
+const home = { "passionStatement": "Animé par une passion pour la technologie et l'art du codage, je crée des applications qui allient fonctionnalité et design réfléchi.", "featuredProjects": "Projets en vedette", "listkeeperDescription": "Une application de listes d'une belle simplicité qui se concentre sur l'essentiel", "listkeeperTag": "Flutter • Android", "pixelfarmDescription": "Aventure agricole roguelike avec un art pixel charmant", "pixelfarmTag": "Godot • En développement" };
+const listkeeper = { "subtitle": "Des listes simples. Bien faites.", "about": "À propos", "description": "Dans un monde d'applications de productivité surchargées qui tentent de tout faire, ListKeeper adopte une approche différente. C'est une application de gestion de listes d'une belle simplicité qui excelle dans une seule chose : vous aider à organiser vos pensées et vos tâches sans distraction. Pas de fonctionnalités complexes que vous n'utiliserez jamais, pas d'interfaces accablantes — juste une création de listes élégante et ciblée qui reste discrète.", "highlights": "Points saillants", "highlightsList": ["Interface claire et intuitive", "Rapide et léger", "Accent sur la simplicité"], "privacyPolicy": "Politique de confidentialité", "backToHome": "Retour à l'accueil" };
+const pixelfarm = { "subtitle": "Bientôt disponible...", "about": "À propos", "description": "Une aventure agricole roguelike à venir qui allie un art pixel charmant à un gameplay captivant et profond. Bien que nous gardions les détails secrets pour l'instant, nous pouvons vous promettre des mois de gameplay captivant dans une expérience complètement sans publicité. Conçu avec passion pour ceux qui apprécient autant la stratégie que le style.", "whatToExpect": "À quoi s'attendre", "highlightsList": ["Art pixel fait à la main", "Mécaniques agricoles roguelike", "Expérience sans publicité", "Rejouabilité extensive"], "backToHome": "Retour à l'accueil" };
+const footer = { "builtWith": "Conçu avec React" };
+const meta = { "platform": "Plateforme", "engine": "Moteur", "android": "Android", "androidIosPlanned": "Android (iOS prévu)", "flutter": "Flutter", "godot": "Godot" };
+const frCATranslations = {
+  nav,
+  home,
+  listkeeper,
+  pixelfarm,
+  footer,
+  meta
+};
+const translations = {
+  "en": enTranslations,
+  "fr-CA": frCATranslations
+};
+const LanguageContext = reactExports.createContext(void 0);
+const LanguageProvider = ({ children }) => {
+  const [language, setLanguageState] = reactExports.useState(() => {
+    const saved = localStorage.getItem("preferred-language");
+    return saved === "fr-CA" || saved === "en" ? saved : "en";
+  });
+  reactExports.useEffect(() => {
+    localStorage.setItem("preferred-language", language);
+    document.documentElement.lang = language;
+  }, [language]);
+  const setLanguage = (lang) => {
+    setLanguageState(lang);
+  };
+  const t = (key) => {
+    const keys = key.split(".");
+    let value = translations[language];
+    for (const k of keys) {
+      if (value && typeof value === "object") {
+        value = value[k];
+      } else {
+        return key;
+      }
+    }
+    return value !== void 0 ? value : key;
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(LanguageContext.Provider, { value: { language, setLanguage, t }, children });
+};
+const useTranslation = () => {
+  const context = reactExports.useContext(LanguageContext);
+  if (context === void 0) {
+    throw new Error("useTranslation must be used within a LanguageProvider");
+  }
+  return context;
+};
 /**
  * @license lucide-react v0.535.0 - ISC
  *
@@ -9208,7 +9274,7 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$2 = [
+const __iconNode$3 = [
   [
     "path",
     {
@@ -9218,7 +9284,19 @@ const __iconNode$2 = [
   ],
   ["path", { d: "M9 18c-4.51 2-5-2-7-2", key: "9comsn" }]
 ];
-const Github = createLucideIcon("github", __iconNode$2);
+const Github = createLucideIcon("github", __iconNode$3);
+/**
+ * @license lucide-react v0.535.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$2 = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+];
+const Globe = createLucideIcon("globe", __iconNode$2);
 /**
  * @license lucide-react v0.535.0 - ISC
  *
@@ -9244,18 +9322,35 @@ const __iconNode = [
 const X = createLucideIcon("x", __iconNode);
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = reactExports.useState(false);
+  const { language, setLanguage, t } = useTranslation();
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "fr-CA" : "en");
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("nav", { className: "navbar", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "nav-container", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-logo", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "logo-text", children: "AC" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "nav-right", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "nav-menu desktop-nav", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-link", children: "Home" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "nav-link", children: "ListKeeper" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "nav-link", children: "Pixel Farm" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-link", children: t("nav.home") }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "nav-link", children: t("nav.listkeeper") }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "nav-link", children: t("nav.pixelfarm") }) })
         ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            onClick: toggleLanguage,
+            className: "language-toggle desktop-language",
+            "aria-label": "Toggle language",
+            title: language === "en" ? "Français" : "English",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 20 }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "language-code", children: language === "en" ? "FR" : "EN" })
+            ]
+          }
+        ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "a",
           {
@@ -9279,9 +9374,23 @@ const Navbar = () => {
       )
     ] }),
     isMenuOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "nav-menu mobile-nav", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-link", onClick: toggleMenu, children: "Home" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "nav-link", onClick: toggleMenu, children: "ListKeeper" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "nav-link", onClick: toggleMenu, children: "Pixel Farm" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-link", onClick: toggleMenu, children: t("nav.home") }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "nav-link", onClick: toggleMenu, children: t("nav.listkeeper") }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "nav-link", onClick: toggleMenu, children: t("nav.pixelfarm") }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          onClick: () => {
+            toggleLanguage();
+            toggleMenu();
+          },
+          className: "nav-link language-link",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 20 }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: language === "en" ? "Français" : "English" })
+          ]
+        }
+      ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "a",
         {
@@ -9292,7 +9401,7 @@ const Navbar = () => {
           onClick: toggleMenu,
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { size: 20 }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GitHub" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: t("nav.github") })
           ]
         }
       ) })
@@ -9300,6 +9409,7 @@ const Navbar = () => {
   ] });
 };
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
   return /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "footer", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "footer-container", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "footer-content", children: [
@@ -9318,15 +9428,16 @@ const Footer = () => {
           "aria-label": "GitHub Profile",
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { size: 18 }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GitHub" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: t("nav.github") })
           ]
         }
       ) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "footer-attribution", children: "Built with React" })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "footer-attribution", children: t("footer.builtWith") })
   ] }) });
 };
 const Home = () => {
+  const { t } = useTranslation();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "home-page", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "hero-section", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hero-content", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hero-image", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -9339,17 +9450,17 @@ const Home = () => {
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hero-text", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Alec Chamberland" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "passion-statement", children: "Driven by a passion for technology and the art of coding, I create applications that blend functionality with thoughtful design." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "passion-statement", children: t("home.passionStatement") })
       ] })
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "featured-projects", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Featured Projects" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: t("home.featuredProjects") }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-cards", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-card listkeeper-card", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/listkeeper", className: "card-link", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "ListKeeper" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "A beautifully simple list app that focuses on what matters" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "project-tag", children: "Flutter • Android" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: t("nav.listkeeper") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t("home.listkeeperDescription") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "project-tag", children: t("home.listkeeperTag") })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "a",
@@ -9371,49 +9482,24 @@ const Home = () => {
           )
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/pixelfarm", className: "project-card", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Pixel Farm" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Roguelike farming adventure with charming pixel art" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "project-tag", children: "Godot • In Development" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: t("nav.pixelfarm") }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t("home.pixelfarmDescription") }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "project-tag", children: t("home.pixelfarmTag") })
         ] })
       ] })
     ] })
   ] });
 };
-const projects = {
-  listkeeper: {
-    title: "ListKeeper",
-    description: "In a world of bloated productivity apps that try to do everything, ListKeeper takes a different approach. It's a beautifully simple list management app that does one thing exceptionally well: helping you organize your thoughts and tasks without the noise. No complex features you'll never use, no overwhelming interfaces—just elegant, focused list-making that stays out of your way.",
-    platform: "Android",
-    engine: "Flutter",
-    highlights: [
-      "Clean, intuitive interface",
-      "Fast and lightweight",
-      "Focus on simplicity"
-    ]
-  },
-  pixelfarm: {
-    title: "Pixel Farm",
-    description: "An upcoming roguelike farming adventure that blends charming pixel art with deep, engaging gameplay. While we're keeping the details under wraps for now, we can promise months of captivating gameplay in a completely ad-free experience. Built with passion and designed for those who appreciate both strategy and style.",
-    platform: "Android (iOS planned)",
-    engine: "Godot",
-    highlights: [
-      "Handcrafted pixel art",
-      "Roguelike farming mechanics",
-      "Ad-free experience",
-      "Extensive replayability"
-    ]
-  }
-};
 const ListKeeper = () => {
-  const project = projects.listkeeper;
+  const { t } = useTranslation();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-page", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-header", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: project.title }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "project-subtitle", children: "Simple lists. Done right." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: t("nav.listkeeper") }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "project-subtitle", children: t("listkeeper.subtitle") }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-meta", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: project.platform }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: t("meta.android") }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-divider", children: "•" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: project.engine })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: t("meta.flutter") })
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "project-download", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -9434,42 +9520,48 @@ const ListKeeper = () => {
       }
     ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-overview", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "About" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: project.description })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: t("listkeeper.about") }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t("listkeeper.description") })
     ] }),
-    project.highlights && /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-highlights", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Highlights" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "highlights-list", children: project.highlights.map((highlight, index) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: highlight }, index)) })
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-highlights", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: t("listkeeper.highlights") }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "highlights-list", children: t("listkeeper.highlightsList").map((highlight, index) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: highlight }, index)) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "project-legal", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "/privacy-policy-listkeeper-en.html", target: "_blank", rel: "noopener noreferrer", children: "Privacy Policy" }) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "back-link", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "btn-text", children: "← Back to Home" }) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "project-legal", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "/privacy-policy-listkeeper-en.html", target: "_blank", rel: "noopener noreferrer", children: t("listkeeper.privacyPolicy") }) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "back-link", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "btn-text", children: [
+      "← ",
+      t("listkeeper.backToHome")
+    ] }) })
   ] });
 };
 const PixelFarm = () => {
-  const project = projects.pixelfarm;
+  const { t } = useTranslation();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-page", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-header", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: project.title }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "project-subtitle", children: "Coming soon..." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: t("nav.pixelfarm") }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "project-subtitle", children: t("pixelfarm.subtitle") }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-meta", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: project.platform }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: t("meta.androidIosPlanned") }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-divider", children: "•" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: project.engine })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: t("meta.godot") })
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-overview", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "About" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: project.description })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: t("pixelfarm.about") }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t("pixelfarm.description") })
     ] }),
-    project.highlights && /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-highlights", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "What to Expect" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "highlights-list", children: project.highlights.map((highlight, index) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: highlight }, index)) })
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-highlights", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: t("pixelfarm.whatToExpect") }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "highlights-list", children: t("pixelfarm.highlightsList").map((highlight, index) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: highlight }, index)) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "back-link", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "btn-text", children: "← Back to Home" }) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "back-link", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "btn-text", children: [
+      "← ",
+      t("pixelfarm.backToHome")
+    ] }) })
   ] });
 };
 function App() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(BrowserRouter, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "app-container", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(LanguageProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(BrowserRouter, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "app-container", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Navbar, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("main", { className: "main-content", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Routes, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/", element: /* @__PURE__ */ jsxRuntimeExports.jsx(Home, {}) }),
@@ -9477,7 +9569,7 @@ function App() {
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/pixelfarm", element: /* @__PURE__ */ jsxRuntimeExports.jsx(PixelFarm, {}) })
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
-  ] }) });
+  ] }) }) });
 }
 ReactDOM.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })

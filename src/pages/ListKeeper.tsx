@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { projects } from '../data/projects';
+import { useTranslation } from '../contexts/LanguageContext';
 
 const ListKeeper = () => {
-  const project = projects.listkeeper;
+  const { t } = useTranslation();
 
   return (
     <div className="project-page">
       <section className="project-header">
-        <h1>{project.title}</h1>
-        <p className="project-subtitle">Simple lists. Done right.</p>
+        <h1>{t('nav.listkeeper')}</h1>
+        <p className="project-subtitle">{t('listkeeper.subtitle')}</p>
         <div className="project-meta">
-          <span className="meta-item">{project.platform}</span>
+          <span className="meta-item">{t('meta.android')}</span>
           <span className="meta-divider">•</span>
-          <span className="meta-item">{project.engine}</span>
+          <span className="meta-item">{t('meta.flutter')}</span>
         </div>
       </section>
 
@@ -33,29 +33,27 @@ const ListKeeper = () => {
       </section>
 
       <section className="project-overview">
-        <h2>About</h2>
-        <p>{project.description}</p>
+        <h2>{t('listkeeper.about')}</h2>
+        <p>{t('listkeeper.description')}</p>
       </section>
 
-      {project.highlights && (
-        <section className="project-highlights">
-          <h2>Highlights</h2>
-          <ul className="highlights-list">
-            {project.highlights.map((highlight, index) => (
-              <li key={index}>{highlight}</li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <section className="project-highlights">
+        <h2>{t('listkeeper.highlights')}</h2>
+        <ul className="highlights-list">
+          {t('listkeeper.highlightsList').map((highlight: string, index: number) => (
+            <li key={index}>{highlight}</li>
+          ))}
+        </ul>
+      </section>
 
       <section className="project-legal">
         <p>
-          <a href="/privacy-policy-listkeeper-en.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <a href="/privacy-policy-listkeeper-en.html" target="_blank" rel="noopener noreferrer">{t('listkeeper.privacyPolicy')}</a>
         </p>
       </section>
 
       <div className="back-link">
-        <Link to="/" className="btn-text">← Back to Home</Link>
+        <Link to="/" className="btn-text">← {t('listkeeper.backToHome')}</Link>
       </div>
     </div>
   );

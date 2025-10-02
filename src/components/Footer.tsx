@@ -1,8 +1,10 @@
 import React from 'react';
 import { Github } from 'lucide-react';
+import { useTranslation } from '../contexts/LanguageContext';
 import './Footer.css';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -19,11 +21,11 @@ const Footer = () => {
               aria-label="GitHub Profile"
             >
               <Github size={18} />
-              <span>GitHub</span>
+              <span>{t('nav.github')}</span>
             </a>
           </div>
         </div>
-        <p className="footer-attribution">Built with React</p>
+        <p className="footer-attribution">{t('footer.builtWith')}</p>
       </div>
     </footer>
   );

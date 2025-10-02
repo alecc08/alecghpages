@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Home",
+    "listkeeper": "ListKeeper",
+    "pixelfarm": "Pixel Farm",
+    "github": "GitHub"
+  },
+  "home": {
+    "passionStatement": "Driven by a passion for technology and the art of coding, I create applications that blend functionality with thoughtful design.",
+    "featuredProjects": "Featured Projects",
+    "listkeeperDescription": "A beautifully simple list app that focuses on what matters",
+    "listkeeperTag": "Flutter • Android",
+    "pixelfarmDescription": "Roguelike farming adventure with charming pixel art",
+    "pixelfarmTag": "Godot • In Development"
+  },
+  "listkeeper": {
+    "subtitle": "Simple lists. Done right.",
+    "about": "About",
+    "description": "In a world of bloated productivity apps that try to do everything, ListKeeper takes a different approach. It's a beautifully simple list management app that does one thing exceptionally well: helping you organize your thoughts and tasks without the noise. No complex features you'll never use, no overwhelming interfaces—just elegant, focused list-making that stays out of your way.",
+    "highlights": "Highlights",
+    "highlightsList": [
+      "Clean, intuitive interface",
+      "Fast and lightweight",
+      "Focus on simplicity"
+    ],
+    "privacyPolicy": "Privacy Policy",
+    "backToHome": "Back to Home"
+  },
+  "pixelfarm": {
+    "subtitle": "Coming soon...",
+    "about": "About",
+    "description": "An upcoming roguelike farming adventure that blends charming pixel art with deep, engaging gameplay. While we're keeping the details under wraps for now, we can promise months of captivating gameplay in a completely ad-free experience. Built with passion and designed for those who appreciate both strategy and style.",
+    "whatToExpect": "What to Expect",
+    "highlightsList": [
+      "Handcrafted pixel art",
+      "Roguelike farming mechanics",
+      "Ad-free experience",
+      "Extensive replayability"
+    ],
+    "backToHome": "Back to Home"
+  },
+  "footer": {
+    "builtWith": "Built with React"
+  },
+  "meta": {
+    "platform": "Platform",
+    "engine": "Engine",
+    "android": "Android",
+    "androidIosPlanned": "Android (iOS planned)",
+    "flutter": "Flutter",
+    "godot": "Godot"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "listkeeper": "ListKeeper",
+    "pixelfarm": "Pixel Farm",
+    "github": "GitHub"
+  },
+  "home": {
+    "passionStatement": "Animé par une passion pour la technologie et l'art du codage, je crée des applications qui allient fonctionnalité et design réfléchi.",
+    "featuredProjects": "Projets en vedette",
+    "listkeeperDescription": "Une application de listes d'une belle simplicité qui se concentre sur l'essentiel",
+    "listkeeperTag": "Flutter • Android",
+    "pixelfarmDescription": "Aventure agricole roguelike avec un art pixel charmant",
+    "pixelfarmTag": "Godot • En développement"
+  },
+  "listkeeper": {
+    "subtitle": "Des listes simples. Bien faites.",
+    "about": "À propos",
+    "description": "Dans un monde d'applications de productivité surchargées qui tentent de tout faire, ListKeeper adopte une approche différente. C'est une application de gestion de listes d'une belle simplicité qui excelle dans une seule chose : vous aider à organiser vos pensées et vos tâches sans distraction. Pas de fonctionnalités complexes que vous n'utiliserez jamais, pas d'interfaces accablantes — juste une création de listes élégante et ciblée qui reste discrète.",
+    "highlights": "Points saillants",
+    "highlightsList": [
+      "Interface claire et intuitive",
+      "Rapide et léger",
+      "Accent sur la simplicité"
+    ],
+    "privacyPolicy": "Politique de confidentialité",
+    "backToHome": "Retour à l'accueil"
+  },
+  "pixelfarm": {
+    "subtitle": "Bientôt disponible...",
+    "about": "À propos",
+    "description": "Une aventure agricole roguelike à venir qui allie un art pixel charmant à un gameplay captivant et profond. Bien que nous gardions les détails secrets pour l'instant, nous pouvons vous promettre des mois de gameplay captivant dans une expérience complètement sans publicité. Conçu avec passion pour ceux qui apprécient autant la stratégie que le style.",
+    "whatToExpect": "À quoi s'attendre",
+    "highlightsList": [
+      "Art pixel fait à la main",
+      "Mécaniques agricoles roguelike",
+      "Expérience sans publicité",
+      "Rejouabilité extensive"
+    ],
+    "backToHome": "Retour à l'accueil"
+  },
+  "footer": {
+    "builtWith": "Conçu avec React"
+  },
+  "meta": {
+    "platform": "Plateforme",
+    "engine": "Moteur",
+    "android": "Android",
+    "androidIosPlanned": "Android (iOS prévu)",
+    "flutter": "Flutter",
+    "godot": "Godot"
+  }
+}
