@@ -9208,6 +9208,23 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
+const __iconNode$2 = [
+  [
+    "path",
+    {
+      d: "M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4",
+      key: "tonef"
+    }
+  ],
+  ["path", { d: "M9 18c-4.51 2-5-2-7-2", key: "9comsn" }]
+];
+const Github = createLucideIcon("github", __iconNode$2);
+/**
+ * @license lucide-react v0.535.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
 const __iconNode$1 = [
   ["path", { d: "M4 12h16", key: "1lakjw" }],
   ["path", { d: "M4 18h16", key: "19g7jn" }],
@@ -9233,10 +9250,23 @@ const Navbar = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("nav", { className: "navbar", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "nav-container", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-logo", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "logo-text", children: "AC" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "nav-menu desktop-nav", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-link", children: "Home" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "nav-link", children: "ListKeeper" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "nav-link", children: "Pixel Farm" }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "nav-right", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "nav-menu desktop-nav", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-link", children: "Home" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "nav-link", children: "ListKeeper" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "nav-link", children: "Pixel Farm" }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "a",
+          {
+            href: "https://github.com/alecc08",
+            target: "_blank",
+            rel: "noopener noreferrer",
+            className: "github-link desktop-github",
+            "aria-label": "GitHub Profile",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { size: 20 })
+          }
+        )
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "button",
@@ -9251,25 +9281,83 @@ const Navbar = () => {
     isMenuOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "nav-menu mobile-nav", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-link", onClick: toggleMenu, children: "Home" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "nav-link", onClick: toggleMenu, children: "ListKeeper" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "nav-link", onClick: toggleMenu, children: "Pixel Farm" }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "nav-link", onClick: toggleMenu, children: "Pixel Farm" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "a",
+        {
+          href: "https://github.com/alecc08",
+          target: "_blank",
+          rel: "noopener noreferrer",
+          className: "nav-link",
+          onClick: toggleMenu,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { size: 20 }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GitHub" })
+          ]
+        }
+      ) })
     ] })
   ] });
 };
+const Footer = () => {
+  const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "footer", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "footer-container", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "footer-content", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "footer-text", children: [
+        "© ",
+        currentYear,
+        " Alec Chamberland"
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "footer-links", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "a",
+        {
+          href: "https://github.com/alecc08",
+          target: "_blank",
+          rel: "noopener noreferrer",
+          className: "footer-link",
+          "aria-label": "GitHub Profile",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { size: 18 }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GitHub" })
+          ]
+        }
+      ) })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "footer-attribution", children: "Built with React" })
+  ] }) });
+};
 const Home = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "home-page", children: /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "hero-section", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hero-content", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hero-image", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "img",
-      {
-        src: "/alec-mini.png",
-        alt: "Alec Chamberland",
-        className: "funko-image"
-      }
-    ) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hero-text", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Alec Chamberland" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "passion-statement", children: "Driven by a passion for technology and the art of coding, I create applications that blend functionality with thoughtful design." })
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "home-page", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "hero-section", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hero-content", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hero-image", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "img",
+        {
+          src: "/alec-mini.png",
+          alt: "Alec Chamberland",
+          className: "funko-image"
+        }
+      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hero-text", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Alec Chamberland" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "passion-statement", children: "Driven by a passion for technology and the art of coding, I create applications that blend functionality with thoughtful design." })
+      ] })
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "featured-projects", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Featured Projects" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-cards", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/listkeeper", className: "project-card", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "ListKeeper" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "A beautifully simple list app that focuses on what matters" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "project-tag", children: "Flutter • Android" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/pixelfarm", className: "project-card", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Pixel Farm" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Roguelike farming adventure with charming pixel art" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "project-tag", children: "Godot • In Development" })
+        ] })
+      ] })
     ] })
-  ] }) }) });
+  ] });
 };
 const projects = {
   listkeeper: {
@@ -9350,7 +9438,8 @@ function App() {
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/", element: /* @__PURE__ */ jsxRuntimeExports.jsx(Home, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/listkeeper", element: /* @__PURE__ */ jsxRuntimeExports.jsx(ListKeeper, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/pixelfarm", element: /* @__PURE__ */ jsxRuntimeExports.jsx(PixelFarm, {}) })
-    ] }) })
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
   ] }) });
 }
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Github } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,17 +17,28 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="nav-menu desktop-nav">
-          <li className="nav-item">
-            <Link to="/" className="nav-link">Home</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/listkeeper" className="nav-link">ListKeeper</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/pixelfarm" className="nav-link">Pixel Farm</Link>
-          </li>
-        </ul>
+        <div className="nav-right">
+          <ul className="nav-menu desktop-nav">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/listkeeper" className="nav-link">ListKeeper</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/pixelfarm" className="nav-link">Pixel Farm</Link>
+            </li>
+          </ul>
+          <a
+            href="https://github.com/alecc08"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="github-link desktop-github"
+            aria-label="GitHub Profile"
+          >
+            <Github size={20} />
+          </a>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -50,6 +61,18 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link to="/pixelfarm" className="nav-link" onClick={toggleMenu}>Pixel Farm</Link>
+          </li>
+          <li className="nav-item">
+            <a
+              href="https://github.com/alecc08"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link"
+              onClick={toggleMenu}
+            >
+              <Github size={20} />
+              <span>GitHub</span>
+            </a>
           </li>
         </ul>
       )}

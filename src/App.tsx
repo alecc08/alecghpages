@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import ListKeeper from './pages/ListKeeper';
 import PixelFarm from './pages/PixelFarm';
@@ -19,6 +20,7 @@ function App() {
             <Route path="/pixelfarm" element={<PixelFarm />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );
