@@ -9208,37 +9208,6 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$3 = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M3 9h18", key: "1pudct" }],
-  ["path", { d: "M3 15h18", key: "5xshup" }],
-  ["path", { d: "M9 3v18", key: "fh3hqa" }],
-  ["path", { d: "M15 3v18", key: "14nvp0" }]
-];
-const Grid3x3 = createLucideIcon("grid-3x3", __iconNode$3);
-/**
- * @license lucide-react v0.535.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$2 = [
-  ["path", { d: "M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8", key: "5wwlr5" }],
-  [
-    "path",
-    {
-      d: "M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",
-      key: "1d0kgt"
-    }
-  ]
-];
-const House = createLucideIcon("house", __iconNode$2);
-/**
- * @license lucide-react v0.535.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
 const __iconNode$1 = [
   ["path", { d: "M4 12h16", key: "1lakjw" }],
   ["path", { d: "M4 18h16", key: "19g7jn" }],
@@ -9258,39 +9227,16 @@ const __iconNode = [
 const X = createLucideIcon("x", __iconNode);
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = reactExports.useState(false);
-  const [isAppsDropdownOpen, setIsAppsDropdownOpen] = reactExports.useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const toggleAppsDropdown = () => {
-    setIsAppsDropdownOpen(!isAppsDropdownOpen);
-  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("nav", { className: "navbar", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "nav-container", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-logo", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "logo-text", children: "Alec Chamberland" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-logo", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "logo-text", children: "AC" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "nav-menu desktop-nav", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "nav-link", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(House, { size: 20 }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Home" })
-        ] }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "nav-item dropdown", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "button",
-            {
-              className: "nav-link dropdown-toggle",
-              onClick: toggleAppsDropdown,
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Grid3x3, { size: 20 }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Apps" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `arrow ${isAppsDropdownOpen ? "up" : "down"}`, children: "▼" })
-              ]
-            }
-          ),
-          isAppsDropdownOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "dropdown-menu", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "dropdown-link", children: "ListKeeper" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "dropdown-link", children: "Pixel Farm" }) })
-          ] })
-        ] })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-link", children: "Home" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "nav-link", children: "ListKeeper" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "nav-link", children: "Pixel Farm" }) })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "button",
@@ -9303,248 +9249,99 @@ const Navbar = () => {
       )
     ] }),
     isMenuOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "nav-menu mobile-nav", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "nav-link", onClick: toggleMenu, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(House, { size: 20 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Home" })
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "nav-item dropdown", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            className: "nav-link dropdown-toggle",
-            onClick: toggleAppsDropdown,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Grid3x3, { size: 20 }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Apps" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `arrow ${isAppsDropdownOpen ? "up" : "down"}`, children: "▼" })
-            ]
-          }
-        ),
-        isAppsDropdownOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "dropdown-menu", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "dropdown-link", onClick: toggleMenu, children: "ListKeeper" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "dropdown-link", onClick: toggleMenu, children: "Pixel Farm" }) })
-        ] })
-      ] })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "nav-link", onClick: toggleMenu, children: "Home" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "nav-link", onClick: toggleMenu, children: "ListKeeper" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "nav-item", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "nav-link", onClick: toggleMenu, children: "Pixel Farm" }) })
     ] })
   ] });
 };
 const Home = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "home-page", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "hero-section card", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "home-page", children: /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "hero-section", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hero-content", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hero-image", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "img",
+      {
+        src: "/alec-mini.png",
+        alt: "Alec Chamberland",
+        className: "funko-image"
+      }
+    ) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hero-text", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: "Alec Chamberland" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "subtitle", children: "Software Developer & Creator" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Welcome to my professional portfolio website. Here you'll find information about my work, projects, and career journey." }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hero-buttons", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/listkeeper", className: "btn", children: "View ListKeeper Project" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/pixelfarm", className: "btn btn-outline ml-2", children: "View Pixel Farm Project" })
-      ] })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "about-section card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "About Me" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "I'm a passionate software developer with expertise in creating modern web applications using React, TypeScript, and Node.js. My journey in technology started at an early age, and I've been constantly learning and evolving as a professional." }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "With a strong foundation in computer science principles and hands-on experience building scalable applications, I'm committed to creating high-quality software that solves real-world problems." })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "experience-section card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Career Highlights" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "experience-item", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Software Developer" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "company", children: "Tech Innovations Inc." }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Developed and maintained multiple React applications, improving user experience by 40%." })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "experience-item", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Full Stack Developer" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "company", children: "Digital Solutions Co." }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Built RESTful APIs and responsive web interfaces using modern JavaScript frameworks." })
-      ] })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "aspirations-section card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Aspirations & Future Goals" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "I'm constantly seeking new challenges to expand my skills. My future goals include:" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Leading development teams on complex software projects" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Contributing to open-source initiatives that make a difference" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Mentoring junior developers and sharing knowledge" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Exploring emerging technologies in AI and machine learning" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Through continuous learning and practical application, I aim to build impactful software solutions that enhance user experiences." })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "passion-statement", children: "Driven by a passion for technology and the art of coding, I create applications that blend functionality with thoughtful design." })
     ] })
-  ] });
+  ] }) }) });
 };
 const projects = {
   listkeeper: {
     title: "ListKeeper",
-    description: "A comprehensive task management application designed to help users organize their daily activities and increase productivity.",
-    features: [
-      "Task Management",
-      "Priority Levels",
-      "Due Dates & Reminders",
-      "Collaboration Tools"
-    ],
-    technicalDetails: {
-      "Frontend": "React, TypeScript, Tailwind CSS",
-      "Backend": "Node.js with Express",
-      "Database": "MongoDB",
-      "Authentication": "JWT-based system"
-    },
-    screenshots: [
-      "/src/assets/listkeeper-dashboard.png",
-      "/src/assets/listkeeper-task-list.png"
+    description: "In a world of bloated productivity apps that try to do everything, ListKeeper takes a different approach. It's a beautifully simple list management app that does one thing exceptionally well: helping you organize your thoughts and tasks without the noise. No complex features you'll never use, no overwhelming interfaces—just elegant, focused list-making that stays out of your way.",
+    platform: "Android",
+    engine: "Flutter",
+    highlights: [
+      "Clean, intuitive interface",
+      "Fast and lightweight",
+      "Focus on simplicity"
     ]
   },
   pixelfarm: {
     title: "Pixel Farm",
-    description: "A creative studio focused on producing high-quality pixel art and indie games with retro-inspired aesthetics.",
-    features: [
-      "Pixel Art Creation",
-      "Game Development",
-      "Creative Collaboration",
-      "Community Engagement"
-    ],
-    technicalDetails: {
-      "Art Tools": "Aseprite, Photoshop, GIMP",
-      "Game Engines": "Unity, Godot",
-      "Programming Languages": "C#, GDScript, JavaScript",
-      "Platforms": "Web (HTML5), Mobile, Desktop"
-    },
-    screenshots: [
-      "/src/assets/pixelfarm-game.png",
-      "/src/assets/pixelfarm-character.png"
+    description: "An upcoming roguelike farming adventure that blends charming pixel art with deep, engaging gameplay. While we're keeping the details under wraps for now, we can promise months of captivating gameplay in a completely ad-free experience. Built with passion and designed for those who appreciate both strategy and style.",
+    platform: "Android (iOS planned)",
+    engine: "Godot",
+    highlights: [
+      "Handcrafted pixel art",
+      "Roguelike farming mechanics",
+      "Ad-free experience",
+      "Extensive replayability"
     ]
   }
 };
 const ListKeeper = () => {
   const project = projects.listkeeper;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-page", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-header card", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-header", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: project.title }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "project-subtitle", children: "A powerful task management application" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "btn", children: "Back to Home" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "project-subtitle", children: "Simple lists. Done right." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-meta", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: project.platform }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-divider", children: "•" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: project.engine })
+      ] })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-overview card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Project Overview" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-overview", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "About" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: project.description })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-features card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Key Features" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "feature-grid", children: project.features.map((feature, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "feature-item", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: feature }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: getFeatureDescription$1(feature) })
-      ] }, index)) })
+    project.highlights && /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-highlights", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Highlights" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "highlights-list", children: project.highlights.map((highlight, index) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: highlight }, index)) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-details card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Technical Details" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { children: Object.entries(project.technicalDetails).map(([key, value]) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("strong", { children: [
-          key,
-          ":"
-        ] }),
-        " ",
-        value
-      ] }, key)) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-demo card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Demo Screenshots" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "screenshot-grid", children: project.screenshots.map((screenshot, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "screenshot-item", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: screenshot, alt: `${project.title} Screenshot ${index + 1}` }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: getScreenshotDescription$1(index) })
-      ] }, index)) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-legal card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Legal & Privacy" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-        "For privacy information, see the ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "/privacy-policy-listkeeper-en.html", target: "_blank", rel: "noopener noreferrer", children: "ListKeeper Privacy Policy" }),
-        "."
-      ] })
-    ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "project-legal", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "/privacy-policy-listkeeper-en.html", target: "_blank", rel: "noopener noreferrer", children: "Privacy Policy" }) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "back-link", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "btn-text", children: "← Back to Home" }) })
   ] });
-};
-const getFeatureDescription$1 = (feature) => {
-  switch (feature) {
-    case "Task Management":
-      return "Create, edit, and organize tasks with ease using our intuitive interface.";
-    case "Priority Levels":
-      return "Assign priority levels to tasks for better organization and focus.";
-    case "Due Dates & Reminders":
-      return "Set due dates with customizable reminders to stay on track.";
-    case "Collaboration Tools":
-      return "Share tasks and collaborate with team members in real-time.";
-    default:
-      return "";
-  }
-};
-const getScreenshotDescription$1 = (index) => {
-  switch (index) {
-    case 0:
-      return "Dashboard View";
-    case 1:
-      return "Task Management Interface";
-    default:
-      return "Project Screenshot";
-  }
 };
 const PixelFarm = () => {
   const project = projects.pixelfarm;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-page", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-header card", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-header", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { children: project.title }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "project-subtitle", children: "Creative pixel art and game development studio" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "btn", children: "Back to Home" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "project-subtitle", children: "Coming soon..." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-meta", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: project.platform }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-divider", children: "•" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: project.engine })
+      ] })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-overview card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Project Overview" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-overview", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "About" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: project.description })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-features card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Key Features" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "feature-grid", children: project.features.map((feature, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "feature-item", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: feature }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: getFeatureDescription(feature) })
-      ] }, index)) })
+    project.highlights && /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-highlights", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "What to Expect" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "highlights-list", children: project.highlights.map((highlight, index) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: highlight }, index)) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-details card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Technical Details" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { children: Object.entries(project.technicalDetails).map(([key, value]) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("strong", { children: [
-          key,
-          ":"
-        ] }),
-        " ",
-        value
-      ] }, key)) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-demo card", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Demo Screenshots" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "screenshot-grid", children: project.screenshots.map((screenshot, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "screenshot-item", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: screenshot, alt: `${project.title} Screenshot ${index + 1}` }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: getScreenshotDescription(index) })
-      ] }, index)) })
-    ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "back-link", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "btn-text", children: "← Back to Home" }) })
   ] });
-};
-const getFeatureDescription = (feature) => {
-  switch (feature) {
-    case "Pixel Art Creation":
-      return "High-quality pixel art for games, characters, and digital assets.";
-    case "Game Development":
-      return "Indie game development with retro-inspired mechanics and aesthetics.";
-    case "Creative Collaboration":
-      return "Collaborative projects with artists, developers, and designers worldwide.";
-    case "Community Engagement":
-      return "Active participation in pixel art communities and gaming forums.";
-    default:
-      return "";
-  }
-};
-const getScreenshotDescription = (index) => {
-  switch (index) {
-    case 0:
-      return "Sample Game Screen";
-    case 1:
-      return "Character Design";
-    default:
-      return "Project Screenshot";
-  }
 };
 function App() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(BrowserRouter, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "app-container", children: [

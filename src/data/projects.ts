@@ -3,53 +3,36 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  features: string[];
-  technicalDetails: { [key: string]: string };
-  screenshots: string[];
+  platform?: string;
+  engine?: string;
+  highlights?: string[];
 }
 
 export const projects = {
   listkeeper: {
     id: 'listkeeper',
     title: 'ListKeeper',
-    description: 'A comprehensive task management application designed to help users organize their daily activities and increase productivity.',
-    features: [
-      'Task Management',
-      'Priority Levels', 
-      'Due Dates & Reminders',
-      'Collaboration Tools'
-    ],
-    technicalDetails: {
-      'Frontend': 'React, TypeScript, Tailwind CSS',
-      'Backend': 'Node.js with Express',
-      'Database': 'MongoDB',
-      'Authentication': 'JWT-based system'
-    },
-    screenshots: [
-  '/src/assets/listkeeper-dashboard.png',
-  '/src/assets/listkeeper-task-list.png'
+    description: 'In a world of bloated productivity apps that try to do everything, ListKeeper takes a different approach. It\'s a beautifully simple list management app that does one thing exceptionally well: helping you organize your thoughts and tasks without the noise. No complex features you\'ll never use, no overwhelming interfaces—just elegant, focused list-making that stays out of your way.',
+    platform: 'Android',
+    engine: 'Flutter',
+    highlights: [
+      'Clean, intuitive interface',
+      'Fast and lightweight',
+      'Focus on simplicity'
     ]
   } as Project,
-  
+
   pixelfarm: {
     id: 'pixelfarm',
     title: 'Pixel Farm',
-    description: 'A creative studio focused on producing high-quality pixel art and indie games with retro-inspired aesthetics.',
-    features: [
-      'Pixel Art Creation',
-      'Game Development',
-      'Creative Collaboration',
-      'Community Engagement'
-    ],
-    technicalDetails: {
-      'Art Tools': 'Aseprite, Photoshop, GIMP',
-      'Game Engines': 'Unity, Godot',
-      'Programming Languages': 'C#, GDScript, JavaScript',
-      'Platforms': 'Web (HTML5), Mobile, Desktop'
-    },
-    screenshots: [
-      '/src/assets/pixelfarm-game.png',
-      '/src/assets/pixelfarm-character.png'
+    description: 'An upcoming roguelike farming adventure that blends charming pixel art with deep, engaging gameplay. While we\'re keeping the details under wraps for now, we can promise months of captivating gameplay in a completely ad-free experience. Built with passion and designed for those who appreciate both strategy and style.',
+    platform: 'Android (iOS planned)',
+    engine: 'Godot',
+    highlights: [
+      'Handcrafted pixel art',
+      'Roguelike farming mechanics',
+      'Ad-free experience',
+      'Extensive replayability'
     ]
   } as Project
 };

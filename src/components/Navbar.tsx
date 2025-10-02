@@ -1,54 +1,36 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Home, Grid, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAppsDropdownOpen, setIsAppsDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleAppsDropdown = () => {
-    setIsAppsDropdownOpen(!isAppsDropdownOpen);
   };
 
   return (
     <nav className="navbar">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <span className="logo-text">Alec Chamberland</span>
+          <span className="logo-text">AC</span>
         </Link>
 
         {/* Desktop Navigation */}
         <ul className="nav-menu desktop-nav">
           <li className="nav-item">
-            <Link to="/" className="nav-link">
-              <Home size={20} />
-              <span>Home</span>
-            </Link>
+            <Link to="/" className="nav-link">Home</Link>
           </li>
-          <li className="nav-item dropdown">
-            <button 
-              className="nav-link dropdown-toggle"
-              onClick={toggleAppsDropdown}
-            >
-              <Grid size={20} />
-              <span>Apps</span>
-              <span className={`arrow ${isAppsDropdownOpen ? 'up' : 'down'}`}>▼</span>
-            </button>
-            {isAppsDropdownOpen && (
-              <ul className="dropdown-menu">
-                <li><Link to="/listkeeper" className="dropdown-link">ListKeeper</Link></li>
-                <li><Link to="/pixelfarm" className="dropdown-link">Pixel Farm</Link></li>
-              </ul>
-            )}
+          <li className="nav-item">
+            <Link to="/listkeeper" className="nav-link">ListKeeper</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/pixelfarm" className="nav-link">Pixel Farm</Link>
           </li>
         </ul>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="nav-toggle"
           onClick={toggleMenu}
           aria-label="Toggle navigation"
@@ -61,26 +43,13 @@ const Navbar = () => {
       {isMenuOpen && (
         <ul className="nav-menu mobile-nav">
           <li className="nav-item">
-            <Link to="/" className="nav-link" onClick={toggleMenu}>
-              <Home size={20} />
-              <span>Home</span>
-            </Link>
+            <Link to="/" className="nav-link" onClick={toggleMenu}>Home</Link>
           </li>
-          <li className="nav-item dropdown">
-            <button 
-              className="nav-link dropdown-toggle"
-              onClick={toggleAppsDropdown}
-            >
-              <Grid size={20} />
-              <span>Apps</span>
-              <span className={`arrow ${isAppsDropdownOpen ? 'up' : 'down'}`}>▼</span>
-            </button>
-            {isAppsDropdownOpen && (
-              <ul className="dropdown-menu">
-                <li><Link to="/listkeeper" className="dropdown-link" onClick={toggleMenu}>ListKeeper</Link></li>
-                <li><Link to="/pixelfarm" className="dropdown-link" onClick={toggleMenu}>Pixel Farm</Link></li>
-              </ul>
-            )}
+          <li className="nav-item">
+            <Link to="/listkeeper" className="nav-link" onClick={toggleMenu}>ListKeeper</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/pixelfarm" className="nav-link" onClick={toggleMenu}>Pixel Farm</Link>
           </li>
         </ul>
       )}
