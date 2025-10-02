@@ -9345,10 +9345,30 @@ const Home = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "featured-projects", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Featured Projects" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-cards", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/listkeeper", className: "project-card", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "ListKeeper" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "A beautifully simple list app that focuses on what matters" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "project-tag", children: "Flutter • Android" })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "project-card listkeeper-card", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/listkeeper", className: "card-link", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "ListKeeper" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "A beautifully simple list app that focuses on what matters" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "project-tag", children: "Flutter • Android" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "a",
+            {
+              href: "https://play.google.com/store/apps/details?id=org.alserv.listkeeper",
+              target: "_blank",
+              rel: "noopener noreferrer",
+              className: "card-play-badge",
+              onClick: (e) => e.stopPropagation(),
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "img",
+                {
+                  src: "/GetItOnGooglePlay_Badge_Web_color_English.png",
+                  alt: "Get it on Google Play",
+                  className: "card-play-img"
+                }
+              )
+            }
+          )
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/pixelfarm", className: "project-card", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Pixel Farm" }),
@@ -9396,6 +9416,23 @@ const ListKeeper = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "meta-item", children: project.engine })
       ] })
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "project-download", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "a",
+      {
+        href: "https://play.google.com/store/apps/details?id=org.alserv.listkeeper",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        className: "play-store-badge",
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "img",
+          {
+            src: "/GetItOnGooglePlay_Badge_Web_color_English.png",
+            alt: "Get it on Google Play",
+            className: "play-store-img"
+          }
+        )
+      }
+    ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "project-overview", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "About" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: project.description })

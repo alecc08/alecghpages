@@ -216,6 +216,37 @@ a:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
+.listkeeper-card {
+  gap: 1rem;
+}
+
+.card-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.card-link h3 {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.listkeeper-card:hover .card-link h3 {
+  color: var(--color-accent-hover);
+}
+
+.card-link p {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
 .project-card h3 {
   color: var(--color-accent);
   font-size: 1.5rem;
@@ -243,6 +274,23 @@ a:hover {
   margin-top: 0.5rem;
 }
 
+.card-play-badge {
+  display: block;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.card-play-badge:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.card-play-img {
+  height: 40px;
+  width: auto;
+}
+
 
 /* Project Pages */
 .project-page {
@@ -253,7 +301,7 @@ a:hover {
 
 .project-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .project-header h1 {
@@ -278,6 +326,34 @@ a:hover {
 
 .meta-divider {
   opacity: 0.5;
+}
+
+.project-download {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+}
+
+.play-store-badge {
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.play-store-badge:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.play-store-img {
+  height: 60px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .play-store-img {
+    height: 50px;
+  }
 }
 
 .project-overview,

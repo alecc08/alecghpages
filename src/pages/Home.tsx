@@ -26,11 +26,26 @@ const Home = () => {
       <section className="featured-projects">
         <h2>Featured Projects</h2>
         <div className="project-cards">
-          <Link to="/listkeeper" className="project-card">
-            <h3>ListKeeper</h3>
-            <p>A beautifully simple list app that focuses on what matters</p>
-            <span className="project-tag">Flutter • Android</span>
-          </Link>
+          <div className="project-card listkeeper-card">
+            <Link to="/listkeeper" className="card-link">
+              <h3>ListKeeper</h3>
+              <p>A beautifully simple list app that focuses on what matters</p>
+              <span className="project-tag">Flutter • Android</span>
+            </Link>
+            <a
+              href="https://play.google.com/store/apps/details?id=org.alserv.listkeeper"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-play-badge"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src="/GetItOnGooglePlay_Badge_Web_color_English.png"
+                alt="Get it on Google Play"
+                className="card-play-img"
+              />
+            </a>
+          </div>
           <Link to="/pixelfarm" className="project-card">
             <h3>Pixel Farm</h3>
             <p>Roguelike farming adventure with charming pixel art</p>

@@ -17,6 +17,21 @@ const ListKeeper = () => {
         </div>
       </section>
 
+      <section className="project-download">
+        <a
+          href="https://play.google.com/store/apps/details?id=org.alserv.listkeeper"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="play-store-badge"
+        >
+          <img
+            src="/GetItOnGooglePlay_Badge_Web_color_English.png"
+            alt="Get it on Google Play"
+            className="play-store-img"
+          />
+        </a>
+      </section>
+
       <section className="project-overview">
         <h2>About</h2>
         <p>{project.description}</p>
