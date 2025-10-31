@@ -9411,30 +9411,27 @@ const Navbar = () => {
 const Footer = () => {
   const { t } = useTranslation();
   const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "footer", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "footer-container", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "footer-content", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "footer-text", children: [
-        "© ",
-        currentYear,
-        " Alec Chamberland"
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "footer-links", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "a",
-        {
-          href: "https://github.com/alecc08",
-          target: "_blank",
-          rel: "noopener noreferrer",
-          className: "footer-link",
-          "aria-label": "GitHub Profile",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { size: 18 }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: t("nav.github") })
-          ]
-        }
-      ) })
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "footer", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "footer-container", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "footer-content", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "footer-text", children: [
+      "© ",
+      currentYear,
+      " Alec Chamberland"
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "footer-attribution", children: t("footer.builtWith") })
-  ] }) });
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "footer-links", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "a",
+      {
+        href: "https://github.com/alecc08",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        className: "footer-link",
+        "aria-label": "GitHub Profile",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { size: 18 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: t("nav.github") })
+        ]
+      }
+    ) })
+  ] }) }) });
 };
 const Home = () => {
   const { t } = useTranslation();

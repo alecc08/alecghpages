@@ -25,7 +25,6 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <p className="footer-attribution">{t('footer.builtWith')}</p>
       </div>
     </footer>
   );
